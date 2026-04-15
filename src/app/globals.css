@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  --bg-cream: #F8F6F2;
+  --bg-card: #FFFFFF;
+  --sidebar-bg: #111111;
+  --sidebar-text: #FFFFFF;
+  --sidebar-muted: #888888;
+  --sidebar-hover: #1E1E1E;
+  --sidebar-active: #2A2A2A;
+  --accent-yellow: #F2E94E;
+  --accent-pink: #FFB3D1;
+  --accent-green: #B8E8C8;
+  --accent-blue: #B3D9F5;
+  --accent-purple: #DDB3F5;
+  --accent-orange: #FFD4B3;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  --border: #E8E4DE;
+  --radius: 16px;
+}
+
+@theme inline {
+  --color-bg-cream: var(--bg-cream);
+  --color-sidebar: var(--sidebar-bg);
+  --color-accent-yellow: var(--accent-yellow);
+  --color-accent-pink: var(--accent-pink);
+  --color-accent-green: var(--accent-green);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-orange: var(--accent-orange);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg-cream);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.2s ease;
+}
+
+/* Card base */
+.card {
+  background: white;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+/* Focus styles */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--accent-yellow);
+  outline-offset: 2px;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease infinite;
+}
